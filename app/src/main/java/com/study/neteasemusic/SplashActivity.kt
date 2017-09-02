@@ -1,12 +1,14 @@
 package com.study.neteasemusic
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
 
-class SplashActivity : AppCompatActivity() {
+import com.study.neteasemusic.base.FullScreenActivity
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+class SplashActivity : FullScreenActivity() {
+    override fun initView() {
         setContentView(R.layout.activity_splash)
+    }
+
+    override fun initData() {
+
     }
 }
