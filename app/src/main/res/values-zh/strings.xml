@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">网易云音乐</string>
+  <string name="splash_sec">秒</string>
 </resources>
