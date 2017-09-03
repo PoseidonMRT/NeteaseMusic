@@ -4,6 +4,7 @@
   <item
     android:id="@+id/action_settings"
     android:orderInCategory="100"
+    android:menuCategory="container"
     android:title="@string/action_settings"
     android:icon="@drawable/main_toolbar_search"
     app:showAsAction="always"/>

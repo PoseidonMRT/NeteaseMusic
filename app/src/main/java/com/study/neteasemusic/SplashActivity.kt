@@ -7,7 +7,7 @@ import com.study.neteasemusic.base.FullScreenActivity
 
 class SplashActivity : FullScreenActivity() {
 
-    private var timer :SplashCountDownTimer? = null
+    private lateinit var timer :SplashCountDownTimer
 
     override fun initView() {
         setContentView(R.layout.activity_splash)
@@ -15,7 +15,7 @@ class SplashActivity : FullScreenActivity() {
 
     override fun initData() {
         timer = SplashCountDownTimer(10000,1000)
-        (timer as SplashCountDownTimer).start()
+        timer.start()
     }
 
 

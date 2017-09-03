@@ -3,8 +3,10 @@ package com.study.neteasemusic
 import android.os.Build
 import kotlinx.android.synthetic.main.activity_main.*;
 import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
+import android.support.v4.view.ViewPager
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
@@ -12,22 +14,39 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.study.neteasemusic.base.activity.StatusBarCompatActivity
+import com.study.neteasemusic.mainpage.MainContentViewPagerAdapter
+import com.study.neteasemusic.mainpage.fragment.MainDiscoFragment
+import com.study.neteasemusic.mainpage.fragment.MainFriendsFragment
+import com.study.neteasemusic.mainpage.fragment.MainMusicFragment
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemSelectedListener ,View.OnClickListener{
+class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemSelectedListener ,View.OnClickListener ,ViewPager.OnPageChangeListener{
 
-    private var toggle: ActionBarDrawerToggle? = null
+    private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var mFragments: List<Fragment>
+    private lateinit var mFragmentPagerAdapter: MainContentViewPagerAdapter
+    private lateinit var discoFragment: MainDiscoFragment
+    private lateinit var musicFragment: MainMusicFragment
+    private lateinit var friendsFragment: MainFriendsFragment
+    private val MUSIC_INDEX = 0
+    private val DISCO_INDEX = 1
+    private val FRIENDS_INDEX = 2
 
     override fun initView() {
         setContentView(R.layout.activity_main)
+        toolbar.title = ""
         setSupportActionBar(toolbar)
-        toolbar.setBackgroundColor(resources.getColor(R.color.defaults_status_bar_color))
+        toolbar.setBackgroundColor(ContextCompat.getColor(this,R.color.defaults_status_bar_color))
     }
 
     override fun initData() {
         toggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawer_layout.addDrawerListener(toggle as ActionBarDrawerToggle)
-        (toggle as ActionBarDrawerToggle).syncState()
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        initMainPagerContent()
+
         nav_view.setNavigationItemSelectedListener(this)
         main_toolbar_music.setOnClickListener(this)
         main_toolbar_disco.setOnClickListener(this)
@@ -37,37 +56,62 @@ class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemS
     override fun onClick(v: View?) {
         when(v){
             main_toolbar_disco -> {
-                refreshViewState(0)
+                refreshViewState(MUSIC_INDEX)
+                main_content_view_pager.currentItem = MUSIC_INDEX
             }
             main_toolbar_friends -> {
-                refreshViewState(1)
+                refreshViewState(FRIENDS_INDEX)
+                main_content_view_pager.currentItem = FRIENDS_INDEX
             }
             main_toolbar_music ->{
-                refreshViewState(2)
+                refreshViewState(DISCO_INDEX)
+                main_content_view_pager.currentItem = DISCO_INDEX
             }
-
         }
+    }
+
+    override fun onPageScrollStateChanged(state: Int) {
+
+    }
+
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+
+    }
+
+    override fun onPageSelected(position: Int) {
+        refreshViewState(position)
     }
 
     fun refreshViewState(index: Int){
         when(index){
-            0 -> {
+            DISCO_INDEX -> {
                 main_toolbar_disco.isSelected = true
                 main_toolbar_friends.isSelected = false
                 main_toolbar_music.isSelected = false
             }
-            1 -> {
-                main_toolbar_disco.isSelected = false
-                main_toolbar_friends.isSelected = true
-                main_toolbar_music.isSelected = false
-            }
-            2 -> {
+            MUSIC_INDEX -> {
                 main_toolbar_disco.isSelected = false
                 main_toolbar_friends.isSelected = false
                 main_toolbar_music.isSelected = true
             }
+            FRIENDS_INDEX -> {
+                main_toolbar_disco.isSelected = false
+                main_toolbar_friends.isSelected = true
+                main_toolbar_music.isSelected = false
+            }
         }
     }
+
+    fun initMainPagerContent(){
+        mFragments = listOf<Fragment>(MainMusicFragment(),MainDiscoFragment(),MainFriendsFragment())
+
+        mFragmentPagerAdapter = MainContentViewPagerAdapter(supportFragmentManager,mFragments)
+        main_content_view_pager.adapter = mFragmentPagerAdapter
+        main_content_view_pager.addOnPageChangeListener(this)
+        main_content_view_pager.currentItem = DISCO_INDEX
+        refreshViewState(DISCO_INDEX)
+    }
+
     override fun initStatusBarColor(): Int {
         return ContextCompat.getColor(this, R.color.defaults_status_bar_color)
     }
