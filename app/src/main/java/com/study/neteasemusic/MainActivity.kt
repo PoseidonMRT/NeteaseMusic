@@ -1,17 +1,20 @@
 package com.study.neteasemusic
 
+import android.os.Build
 import kotlinx.android.synthetic.main.activity_main.*;
 import android.support.design.widget.NavigationView
+import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.study.neteasemusic.base.activity.StatusBarCompatActivity
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemSelectedListener ,View.OnClickListener{
 
     private var toggle: ActionBarDrawerToggle? = null
 
@@ -26,10 +29,47 @@ class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemS
         drawer_layout.addDrawerListener(toggle as ActionBarDrawerToggle)
         (toggle as ActionBarDrawerToggle).syncState()
         nav_view.setNavigationItemSelectedListener(this)
+        main_toolbar_music.setOnClickListener(this)
+        main_toolbar_disco.setOnClickListener(this)
+        main_toolbar_friends.setOnClickListener(this)
     }
 
+    override fun onClick(v: View?) {
+        when(v){
+            main_toolbar_disco -> {
+                refreshViewState(0)
+            }
+            main_toolbar_friends -> {
+                refreshViewState(1)
+            }
+            main_toolbar_music ->{
+                refreshViewState(2)
+            }
+
+        }
+    }
+
+    fun refreshViewState(index: Int){
+        when(index){
+            0 -> {
+                main_toolbar_disco.isSelected = true
+                main_toolbar_friends.isSelected = false
+                main_toolbar_music.isSelected = false
+            }
+            1 -> {
+                main_toolbar_disco.isSelected = false
+                main_toolbar_friends.isSelected = true
+                main_toolbar_music.isSelected = false
+            }
+            2 -> {
+                main_toolbar_disco.isSelected = false
+                main_toolbar_friends.isSelected = false
+                main_toolbar_music.isSelected = true
+            }
+        }
+    }
     override fun initStatusBarColor(): Int {
-        return resources.getColor(R.color.defaults_status_bar_color)
+        return ContextCompat.getColor(this, R.color.defaults_status_bar_color)
     }
 
     override fun onBackPressed() {

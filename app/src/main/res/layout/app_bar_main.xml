@@ -17,7 +17,42 @@
       android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
       android:background="?attr/colorPrimary"
-      app:popupTheme="@style/AppTheme.PopupOverlay"/>
+      app:popupTheme="@style/AppTheme.PopupOverlay">
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:theme="@style/AppTheme">
+
+        <ImageView
+          android:id="@+id/main_toolbar_disco"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:clickable="true"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:src="@drawable/main_toolbar_disco"/>
+
+        <ImageView
+          android:id="@+id/main_toolbar_music"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="match_parent"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:src="@drawable/main_toolbar_music"/>
+
+        <ImageView
+          android:id="@+id/main_toolbar_friends"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="match_parent"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:src="@drawable/main_toolbar_friends"/>
+
+      </LinearLayout>
+    </android.support.v7.widget.Toolbar>
 
   </android.support.design.widget.AppBarLayout>
 
