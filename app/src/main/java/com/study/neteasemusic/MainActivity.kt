@@ -56,16 +56,16 @@ class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemS
     override fun onClick(v: View?) {
         when(v){
             main_toolbar_disco -> {
-                refreshViewState(MUSIC_INDEX)
-                main_content_view_pager.currentItem = MUSIC_INDEX
+                refreshViewState(DISCO_INDEX)
+                main_content_view_pager.currentItem = DISCO_INDEX
             }
             main_toolbar_friends -> {
                 refreshViewState(FRIENDS_INDEX)
                 main_content_view_pager.currentItem = FRIENDS_INDEX
             }
             main_toolbar_music ->{
-                refreshViewState(DISCO_INDEX)
-                main_content_view_pager.currentItem = DISCO_INDEX
+                refreshViewState(MUSIC_INDEX)
+                main_content_view_pager.currentItem = MUSIC_INDEX
             }
         }
     }

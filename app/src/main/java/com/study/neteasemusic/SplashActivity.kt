@@ -14,6 +14,7 @@ class SplashActivity : FullScreenActivity() {
     }
 
     override fun initData() {
+
         timer = SplashCountDownTimer(10000,1000)
         timer.start()
     }
@@ -30,4 +31,5 @@ class SplashActivity : FullScreenActivity() {
             splash_count_down_text.text = (millisUntilFinished / 1000).toString()
         }
     }
+
 }
