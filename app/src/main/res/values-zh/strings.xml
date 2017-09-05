@@ -2,4 +2,8 @@
 <resources>
   <string name="app_name">网易云音乐</string>
   <string name="splash_sec">秒</string>
+  <string name="main_disco_tab_title_music_list">歌单</string>
+  <string name="main_disco_tab_title_radio">主播电台</string>
+  <string name="main_disco_tab_title_recommand">个性推荐</string>
+  <string name="main_disco_tab_title_rating_list">排行榜</string>
 </resources>

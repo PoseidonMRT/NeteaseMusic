@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
-  <TextView
-    android:layout_gravity="center"
-    android:text="@string/main_disco"
-    android:textColor="@color/defaults_status_bar_color"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+  <android.support.design.widget.TabLayout
+    android:id="@+id/main_disco_tabs"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_alignParentTop="true"
+    app:tabSelectedTextColor="@color/defaults_status_bar_color"
+    app:tabTextColor="@color/defaults_main_tab_text_gray"
+    app:tabIndicatorColor="@color/defaults_status_bar_color"
+    app:tabBackground="@color/defaults_white">
+
+  </android.support.design.widget.TabLayout>
+
+  <android.support.v4.view.ViewPager
+    android:id="@+id/main_disco_view_pager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/main_disco_tabs">
+
+  </android.support.v4.view.ViewPager>
 </RelativeLayout>

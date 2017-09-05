@@ -10,4 +10,8 @@
     <string name="main_disco">Discovery</string>
     <string name="main_music">Music</string>
     <string name="main_friends">Friends</string>
+    <string name="main_disco_tab_title_recommand">Recommand</string>
+    <string name="main_disco_tab_title_music_list">Music List</string>
+    <string name="main_disco_tab_title_radio">Radio</string>
+    <string name="main_disco_tab_title_rating_list">Rating List</string>
 </resources>

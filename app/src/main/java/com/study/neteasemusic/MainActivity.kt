@@ -1,20 +1,17 @@
 package com.study.neteasemusic
 
-import android.os.Build
 import kotlinx.android.synthetic.main.activity_main.*;
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v4.view.ViewPager
-import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.study.neteasemusic.base.activity.StatusBarCompatActivity
-import com.study.neteasemusic.mainpage.MainContentViewPagerAdapter
+import com.study.neteasemusic.base.adapter.BaseFragmentPagerAdapter
 import com.study.neteasemusic.mainpage.fragment.MainDiscoFragment
 import com.study.neteasemusic.mainpage.fragment.MainFriendsFragment
 import com.study.neteasemusic.mainpage.fragment.MainMusicFragment
@@ -25,7 +22,7 @@ class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemS
 
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var mFragments: List<Fragment>
-    private lateinit var mFragmentPagerAdapter: MainContentViewPagerAdapter
+    private lateinit var mFragmentPagerAdapter: BaseFragmentPagerAdapter
     private lateinit var discoFragment: MainDiscoFragment
     private lateinit var musicFragment: MainMusicFragment
     private lateinit var friendsFragment: MainFriendsFragment
@@ -105,7 +102,7 @@ class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemS
     fun initMainPagerContent(){
         mFragments = listOf<Fragment>(MainMusicFragment(),MainDiscoFragment(),MainFriendsFragment())
 
-        mFragmentPagerAdapter = MainContentViewPagerAdapter(supportFragmentManager,mFragments)
+        mFragmentPagerAdapter = BaseFragmentPagerAdapter(supportFragmentManager,mFragments, emptyList())
         main_content_view_pager.adapter = mFragmentPagerAdapter
         main_content_view_pager.addOnPageChangeListener(this)
         main_content_view_pager.currentItem = DISCO_INDEX

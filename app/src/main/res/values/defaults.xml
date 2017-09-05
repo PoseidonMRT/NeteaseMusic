@@ -2,4 +2,5 @@
 <resources>
   <color name="defaults_status_bar_color">#C20C0C</color>
   <color name="defaults_white">#FFFFFF</color>
+  <color name="defaults_main_tab_text_gray">#6D7170</color>
 </resources>

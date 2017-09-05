@@ -28,5 +28,17 @@ abstract class BaseFragment:Fragment() {
         return mRootView
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        initView(mRootView,savedInstanceState)
+        initData()
+        super.onActivityCreated(savedInstanceState)
+    }
+
+    fun getRootView(): View{
+        return mRootView
+    }
+
     abstract fun setContent(): Int
+    abstract fun initView(view: View,savedInstanceState: Bundle?)
+    abstract fun initData()
 }
