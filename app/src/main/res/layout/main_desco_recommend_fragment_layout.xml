@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
-  <TextView
-    android:text="Recommend"
-    android:textColor="@color/defaults_status_bar_color"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/main_disco_recommend_recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  </android.support.v7.widget.RecyclerView>
+
 </LinearLayout>
