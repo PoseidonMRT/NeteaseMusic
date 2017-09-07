@@ -1,7 +1,9 @@
 package com.study.neteasemusic.mainpage.discoadapter
 
+import android.content.Context
 import android.widget.TextView
 import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -10,7 +12,7 @@ import android.widget.ImageView
 /**
  * Created by tuozhaobing on 17/9/6.
  */
-class DiscoRecommendAdapter:  RecyclerView.Adapter<DiscoRecommendAdapter.DashboardItemHolder>(){
+class DiscoRecommendAdapter(var mContext: Context,var mTypes:List<Int>):  RecyclerView.Adapter<DiscoRecommendAdapter.DashboardItemHolder>(){
 
     override fun onBindViewHolder(holder: DashboardItemHolder?, position: Int) {
 
@@ -21,7 +23,7 @@ class DiscoRecommendAdapter:  RecyclerView.Adapter<DiscoRecommendAdapter.Dashboa
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): DashboardItemHolder {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return DashboardItemHolder(LayoutInflater.from(parent!!.context).inflate(viewType,parent,false))
     }
 
     class DashboardItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

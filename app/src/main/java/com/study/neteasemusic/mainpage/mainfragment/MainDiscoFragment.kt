@@ -5,9 +5,12 @@ import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.view.View
+import android.widget.LinearLayout
+import android.widget.Toast
 import com.study.neteasemusic.R
 import com.study.neteasemusic.base.adapter.BaseFragmentPagerAdapter
 import com.study.neteasemusic.base.fragment.BaseFragment
+import com.study.neteasemusic.base.widget.SwipeFrameLayout
 import com.study.neteasemusic.mainpage.discofragment.MusicListFragment
 import com.study.neteasemusic.mainpage.discofragment.RadioFragment
 import com.study.neteasemusic.mainpage.discofragment.RatingListFragment

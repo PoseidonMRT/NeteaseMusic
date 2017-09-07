@@ -10,15 +10,17 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import com.study.neteasemusic.base.activity.StatusBarCompatActivity
 import com.study.neteasemusic.base.adapter.BaseFragmentPagerAdapter
+import com.study.neteasemusic.base.widget.SwipeFrameLayout
 import com.study.neteasemusic.mainpage.fragment.MainDiscoFragment
 import com.study.neteasemusic.mainpage.fragment.MainFriendsFragment
 import com.study.neteasemusic.mainpage.fragment.MainMusicFragment
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemSelectedListener ,View.OnClickListener ,ViewPager.OnPageChangeListener{
+class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemSelectedListener ,View.OnClickListener ,ViewPager.OnPageChangeListener, SwipeFrameLayout.OnSwipeListener{
 
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var mFragments: List<Fragment>
@@ -48,6 +50,7 @@ class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemS
         main_toolbar_music.setOnClickListener(this)
         main_toolbar_disco.setOnClickListener(this)
         main_toolbar_friends.setOnClickListener(this)
+        main_swipe_layout.addOnSwipeListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -111,6 +114,14 @@ class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemS
 
     override fun initStatusBarColor(): Int {
         return ContextCompat.getColor(this, R.color.defaults_status_bar_color)
+    }
+
+    override fun swipeLeft() {
+        Toast.makeText(this,"Left Swipe", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun swipeRight() {
+        Toast.makeText(this,"Right Swipe", Toast.LENGTH_SHORT).show()
     }
 
     override fun onBackPressed() {

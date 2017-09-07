@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<com.study.neteasemusic.base.widget.SwipeFrameLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:id="@+id/main_swipe_layout"
   tools:context="com.study.neteasemusic.MainActivity"
   tools:showIn="@layout/app_bar_main">
   <android.support.v4.view.ViewPager
@@ -14,4 +15,11 @@
     >
 
   </android.support.v4.view.ViewPager>
-</RelativeLayout>
+  <include
+    android:id="@+id/player_bar_layout"
+    layout="@layout/player_bar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/defaults_player_bar_height"
+    android:layout_gravity="bottom"
+    android:visibility="visible"></include>
+</com.study.neteasemusic.base.widget.SwipeFrameLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="@dimen/defaults_player_bar_icon_height">
+  <ImageView
+    android:id="@+id/player_info_music_icon"
+    android:layout_width="@dimen/defaults_player_bar_icon_width"
+    android:layout_height="@dimen/defaults_player_bar_icon_height"
+    android:layout_margin="@dimen/defaults_payer_bar_margin"
+    android:layout_alignParentLeft="true"
+    android:layout_gravity="center_vertical"
+    android:src="@mipmap/ic_launcher"/>
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_toRightOf="@id/player_info_music_icon"
+    android:orientation="vertical">
+    <TextView
+      android:id="@+id/player_info_music_name"
+      android:layout_width="wrap_content"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:layout_gravity="center_vertical"
+      android:gravity="center_vertical"
+      android:text="Music Name"
+      android:textColor="@color/defaults_player_bar_text_color"/>
+    <TextView
+      android:id="@+id/player_info_music_author"
+      android:layout_width="wrap_content"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:layout_gravity="center_vertical"
+      android:gravity="center_vertical"
+      android:text="Swipe Left Or Right To Change Music"
+      android:textColor="@color/defaults_player_bar_text_color"/>
+  </LinearLayout>
+
+</RelativeLayout>
