@@ -6,4 +6,16 @@
   <string name="main_disco_tab_title_radio">主播电台</string>
   <string name="main_disco_tab_title_recommand">个性推荐</string>
   <string name="main_disco_tab_title_rating_list">排行榜</string>
+  <string name="main_drawer_title_message">我的消息</string>
+  <string name="main_drawer_title_auto_stop">定时停止播放</string>
+  <string name="main_drawer_title_clock_timer">音乐闹钟</string>
+  <string name="main_drawer_title_drive_mode">驾驶模式</string>
+  <string name="main_drawer_title_mail_center">商城</string>
+  <string name="main_drawer_title_music_online">在线听歌免流量</string>
+  <string name="main_drawer_title_my_friends">我的好友</string>
+  <string name="main_drawer_title_nearby_person">附近的人</string>
+  <string name="main_drawer_title_search_music">听歌识曲</string>
+  <string name="main_drawer_title_theme_change">个性换肤</string>
+  <string name="main_drawer_title_vip">会员中心</string>
+  <string name="main_music"></string>
 </resources>

@@ -14,4 +14,15 @@
     <string name="main_disco_tab_title_music_list">Music List</string>
     <string name="main_disco_tab_title_radio">Radio</string>
     <string name="main_disco_tab_title_rating_list">Rating List</string>
+    <string name="main_drawer_title_message">My Message</string>
+    <string name="main_drawer_title_vip">VIP Center</string>
+    <string name="main_drawer_title_mail_center">Mail Center</string>
+    <string name="main_drawer_title_music_online">Listen Music Online</string>
+    <string name="main_drawer_title_my_friends">My Friends</string>
+    <string name="main_drawer_title_nearby_person">Nearby People</string>
+    <string name="main_drawer_title_theme_change">Theme Change</string>
+    <string name="main_drawer_title_search_music">Find Music According To Audio</string>
+    <string name="main_drawer_title_clock_timer">Music Clock</string>
+    <string name="main_drawer_title_auto_stop">Auto Stop/Auto Start</string>
+    <string name="main_drawer_title_drive_mode">Driving Mode</string>
 </resources>

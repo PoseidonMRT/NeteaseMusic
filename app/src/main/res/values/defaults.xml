@@ -4,11 +4,13 @@
   <color name="defaults_white">#FFFFFF</color>
   <color name="defaults_main_tab_text_gray">#6D7170</color>
   <color name="defaults_player_bar_text_color">#545454</color>
+  <color name="defaults_drawer_menu_text_color">#333333</color>
   <dimen name="defaults_player_bar_height">56dp</dimen>
   <dimen name="defaults_player_bar_icon_height">48dp</dimen>
   <dimen name="defaults_player_bar_icon_width">48dp</dimen>
   <dimen name="defaults_player_bar_icon_small_height">35dp</dimen>
   <dimen name="defaults_player_bar_icon_small_width">35dp</dimen>
+  <dimen name="defaults_nav_icon_margin">8dp</dimen>
 
   <dimen name="defaults_payer_bar_margin">8dp</dimen>
 </resources>

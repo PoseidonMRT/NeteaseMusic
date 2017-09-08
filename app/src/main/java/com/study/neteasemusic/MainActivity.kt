@@ -1,5 +1,8 @@
 package com.study.neteasemusic
 
+import android.content.res.ColorStateList
+import android.content.res.Resources
+import android.os.Build
 import kotlinx.android.synthetic.main.activity_main.*;
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
@@ -28,6 +31,7 @@ class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemS
     private lateinit var discoFragment: MainDiscoFragment
     private lateinit var musicFragment: MainMusicFragment
     private lateinit var friendsFragment: MainFriendsFragment
+    private lateinit var mColorState:ColorStateList
     private val MUSIC_INDEX = 0
     private val DISCO_INDEX = 1
     private val FRIENDS_INDEX = 2
@@ -37,6 +41,16 @@ class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemS
         toolbar.title = ""
         setSupportActionBar(toolbar)
         toolbar.setBackgroundColor(ContextCompat.getColor(this,R.color.defaults_status_bar_color))
+
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            mColorState = resources.getColorStateList(R.drawable.nav_menu_item_color,null)
+        }else{
+            mColorState = resources.getColorStateList(R.drawable.nav_menu_item_color)
+        }
+
+        nav_view.itemTextColor = mColorState*/
+
+        nav_view.setItemTextAppearance(R.style.MenuTextApperance)
     }
 
     override fun initData() {
@@ -156,20 +170,29 @@ class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemS
         // Handle navigation view item clicks here.
         val id = item.itemId
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_message) {
+            // Handle the my message action
+        } else if (id == R.id.nav_vip_center) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_mail_center) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_music_online) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_my_friend) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_nearby_people) {
+
+        } else if (id == R.id.nav_theme_change) {
+
+        } else if (id == R.id.nav_music_recognize) {
+
+        } else if (id == R.id.nav_auto_stop) {
+
+        } else if (id == R.id.nav_music_clock) {
+
+        } else if (id == R.id.nav_driving_mode) {
 
         }
-
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
