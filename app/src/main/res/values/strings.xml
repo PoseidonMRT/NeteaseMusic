@@ -25,4 +25,8 @@
     <string name="main_drawer_title_clock_timer">Music Clock</string>
     <string name="main_drawer_title_auto_stop">Auto Stop/Auto Start</string>
     <string name="main_drawer_title_drive_mode">Driving Mode</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_night_mode">Night Mode</string>
+    <string name="nav_sun_mode">Sun Mode</string>
+    <string name="nav_exit">Exit</string>
 </resources>

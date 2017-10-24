@@ -18,4 +18,9 @@
   <string name="main_drawer_title_theme_change">个性换肤</string>
   <string name="main_drawer_title_vip">会员中心</string>
   <string name="main_music"></string>
+  <string name="action_settings">设置</string>
+  <string name="nav_exit">退出</string>
+  <string name="nav_night_mode">夜间模式</string>
+  <string name="nav_settings">设置</string>
+  <string name="nav_sun_mode">日间模式</string>
 </resources>

@@ -11,6 +11,7 @@
   <dimen name="defaults_player_bar_icon_small_height">35dp</dimen>
   <dimen name="defaults_player_bar_icon_small_width">35dp</dimen>
   <dimen name="defaults_nav_icon_margin">8dp</dimen>
+  <color name="defaults_nav_text_color">#363636</color>
 
   <dimen name="defaults_payer_bar_margin">8dp</dimen>
 </resources>
