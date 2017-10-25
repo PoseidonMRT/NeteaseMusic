@@ -41,15 +41,6 @@ class MainActivity : StatusBarCompatActivity(), NavigationView.OnNavigationItemS
         toolbar.title = ""
         setSupportActionBar(toolbar)
         toolbar.setBackgroundColor(ContextCompat.getColor(this,R.color.defaults_status_bar_color))
-
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            mColorState = resources.getColorStateList(R.drawable.nav_menu_item_color,null)
-        }else{
-            mColorState = resources.getColorStateList(R.drawable.nav_menu_item_color)
-        }
-
-        nav_view.itemTextColor = mColorState*/
-
         nav_view.setItemTextAppearance(R.style.MenuTextApperance)
     }
 

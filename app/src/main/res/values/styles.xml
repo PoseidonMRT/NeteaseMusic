@@ -5,14 +5,6 @@
     <item name="windowNoTitle">true</item>
   </style>
 
-  <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    <!-- Customize your theme here. -->
-    <item name="colorPrimary">@color/colorPrimary</item>
-    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-    <item name="colorAccent">#FF4081</item>
-
-  </style>
-
   <!-- Base application theme. -->
   <style name="AppTheme" parent="AppTheme.Base"></style>
 
@@ -38,5 +30,12 @@
 
   <style name="MenuTextApperance">
     <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+  </style>
+
+  <style name="TranslationTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:colorPrimary">@color/PrimaryColor</item>
+    <item name="android:colorPrimaryDark">@color/PrimaryDarkColor</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+    <!-- Customize your theme here. -->
   </style>
 </resources>
